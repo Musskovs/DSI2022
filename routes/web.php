@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LivroController;
 use App\Http\Controllers\ProdutoController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,14 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos/index');
-Route::get('/produtos/criar', [ProdutoController::class, 'criar'])->name('produtos/criar');
-Route::get('/produtos/ver/{id}', [ProdutoController::class, 'ver'])->name('produtos/ver');
+//Produtos
+Route::get('/produto', [ProdutoController::class, 'index'])->name('produto');
+Route::get('/produto/criar', [ProdutoController::class, 'criar'])->name('produto/criar');
+Route::get('/produto/ver/{prod}', [ProdutoController::class, 'ver'])->name('produto/ver');
+Route::post('/produto/criar', [ProdutoController::class, 'inserir'])->name('produto/inserir');
 
+//Livros
+Route::get('/livro', [LivroController::class, 'index'])->name('livro');
+Route::get('/livro/criar', [LivroController::class, 'criar'])->name('livro/criar');
+Route::get('/livro/ver/{id}', [LivroController::class, 'ver'])->name('livro/ver');
+Route::post('/livro/criar', [LivroController::class, 'inserir'])->name('livro/inserir');

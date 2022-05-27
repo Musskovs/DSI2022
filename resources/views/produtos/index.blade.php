@@ -5,7 +5,7 @@
 @section('body')
 
     <h1>Index de Produto</h1>
-    <p><a href="{{route('produtos/criar')}}">Criar um produto</a></p>
+    <p><a href="{{route('produto/criar')}}">Criar um produto</a></p>
 
     <table border="1">
         <tr>
@@ -16,7 +16,7 @@
         @foreach($produtos as $produto)
             <tr>
                 <td>
-                    <a href="{{route('produtos/ver', $produto->id)}}">
+                    <a href="{{route('produto/ver', $produto->id)}}">
                         {{ $produto->nome }}
                     </a>
                 </td>
